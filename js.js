@@ -27,7 +27,7 @@ $(document).ready(function () {
 
                     this.addRating = function (rating) {
                         for (var i = 1; i <= getHotelRating; i++) {
-                            $(rating).append('?');
+                            $(rating).append("★");
                         }
                     };
 
