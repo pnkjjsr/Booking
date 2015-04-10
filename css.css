@@ -90,7 +90,7 @@ h2 {
 }
 
 .one_review cite:before {
-	content: '— ';
+	content: '� ';
 }
 
 .review_score {
@@ -209,6 +209,29 @@ h2 {
 }
 
 .facilities li:before {
-	content: '✔ ';
+	content: '? ';
 	color: #0896ff;
+}
+
+/*Pagination | 11th April 2015 | Pankaj Jasoria*/
+.pagination, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.pagination li {
+    display: inline-block;    
+    padding: 6px 10px;
+    margin: 0 5px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #E6EDF6;
+    cursor: pointer;
+}
+.pagination li:hover {
+    color: #fff;
+    border: 1px solid #000;
+    background-color: #003580;
 }

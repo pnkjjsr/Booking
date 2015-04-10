@@ -9,7 +9,7 @@
                 "city": "Paris",
                 "nation": "France"
             },
-            "images": [
+            "photos": [
                 {
                     "thumbnail": "img/1_thumb.jpg",
                     "large": "img/1_large.jpg"
@@ -67,7 +67,7 @@
                     "large": "img/14_large.jpg"
                 }
             ],
-            "description": "<p>Located in the heart of Paris, this 5-star hotel offers elegant guest rooms in a Hausmannian-style building. It features a fitness centre, a concierge and a tour desk with ticket service.</p><p>Decorated in a unique style, the air-conditioned guest rooms at the Hotel du Louvre are equipped with satellite TV, a minibar and free Wi-Fi access. Some rooms feature a seating area. All rooms have a private bathroom, some include marble features.</p><p>The hotel restaurant, Brasserie du Louvre, has a traditional Parisian decor and serves traditional French cuisine. A buffet breakfast is served every morning. Guests can also enjoy a cocktail and jazz evenings twice a week in the Defender Bar.</p><p>The 4 facades and terrace of this hotel overlook the famous Louvre Museum, the Op�ra Garnier and the Com�die Fran�aise theatre.</p><p>Hotel du Louvre is situated 2 minutes from Palais Royal Metro Station, providing direct access to the Champs Elysees and the Place de la Bastille. Public parking is available nearby.</p>",
+            "description": "<p>Located in the heart of Paris, this 5-star hotel offers elegant guest rooms in a Hausmannian-style building. It features a fitness centre, a concierge and a tour desk with ticket service.</p><p>Decorated in a unique style, the air-conditioned guest rooms at the Hotel du Louvre are equipped with satellite TV, a minibar and free Wi-Fi access. Some rooms feature a seating area. All rooms have a private bathroom, some include marble features.</p><p>The hotel restaurant, Brasserie du Louvre, has a traditional Parisian decor and serves traditional French cuisine. A buffet breakfast is served every morning. Guests can also enjoy a cocktail and jazz evenings twice a week in the Defender Bar.</p><p>The 4 facades and terrace of this hotel overlook the famous Louvre Museum, the Op�ra Garnier and the Com�die Fran�aise theatre.</p><p>Hotel du Louvre is situated 2 minutes from Palais Royal Metro Station, providing direct access to the Champs Elysees and the Place de la Bastille. Public parking is available nearby.</p>",
             "facilities": [
                 "Free Wifi",
                 "Swimming Pool",
@@ -80,72 +80,83 @@
                 "Satellite TV",
                 "Room Service"
             ],
-            "room": [
+            "rooms": [
                 {
-                    "type": "Basic 2 Bed",
+                    "name": "Basic 2 Bed",
                     "occupancy": 2,
-                    "currency": "€",
-                    "price": 88.99
+                    "currency": "&euro;",
+                    "price": 88.99,
+                    "type": "basic2"
                 },
                 {
-                    "type": "Basic Familty Room",
+                    "name": "Basic Familty Room",
                     "occupancy": 4,
-                    "currency": "€",
-                    "price": 98.99
+                    "currency": "&euro;",
+                    "price": 98.99,
+                    "type": "basicfamily"
                 },
                 {
-                    "type": "Deluxe 2 Bed",
+                    "name": "Deluxe 2 Bed",
                     "occupancy": 2,
-                    "currency": "€",
-                    "price": 109.99
+                    "currency": "&euro;",
+                    "price": 109.99,
+                    "type": "deluxe2"
                 },
                 {
-                    "type": "Deluxe Family Room",
+                    "name": "Deluxe Family Room",
                     "occupancy": 7,
-                    "currency": "€",
-                    "price": 112.99
+                    "currency": "&euro;",
+                    "price": 112.99,
+                    "type": "deluxefamily"
                 },
                 {
-                    "type": "Bridal Suite",
+                    "name": "Bridal Suite",
                     "occupancy": 2,
-                    "currency": "€",
-                    "price": 167.99
+                    "currency": "&euro;",
+                    "price": 167.99,
+                    "type": "bridalsuite"
                 },
                 {
-                    "type": "President Suite",
+                    "name": "President Suite",
                     "occupancy": 2,
-                    "currency": "€",
-                    "price": 301.99
+                    "currency": "&euro;",
+                    "price": 301.99,
+                    "type": "presidentsuite"
                 },
                 {
-                    "type": "One+One",
+                    "name": "One+One",
                     "occupancy": 2,
-                    "currency": "€",
-                    "price": 78.99
+                    "currency": "&euro;",
+                    "price": 78.99,
+                    "type": "oneplusone"
                 },
                 {
-                    "type": "Single Room",
+                    "name": "Single Room",
                     "occupancy": 1,
-                    "currency": "€",
-                    "price": 28.99
+                    "currency": "&euro;",
+                    "price": 28.99,
+                    "type": "single"
                 },
                 {
-                    "type": "Queen Room",
+                    "name": "Queen Room",
                     "occupancy": 2,
-                    "currency": "€",
-                    "price": 99.99
+                    "currency": "&euro;",
+                    "price": 99.99,
+                    "type": "queen"
                 },
                 {
-                    "type": "Basement 1 Bed",
+                    "name": "Basement 1 Bed",
                     "occupancy": 2,
-                    "currency": "€",
-                    "price": 9.99
+                    "currency": "&euro;",
+                    "price": 9.99,
+                    "type": "basement1"
                 },
                 {
-                    "type": "Mega XL Suite",
+                    "name": "Mega XL Suite",
                     "occupancy": 9,
-                    "currency": "€",
-                    "price": 412.99
+                    "currency": "&euro;",
+                    "price": 412.99,
+                    "type": "megaxl"
                 }
             ],
             "reviews": [
