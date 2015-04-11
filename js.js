@@ -19,6 +19,20 @@ $(document).ready(function () {
                 var getRooms = feed.hotels[0].rooms;
                 var getReviews = feed.hotels[0].reviews;
 
+
+                var obj_hotel = new hotels();
+                obj_hotel.addName(".hotel_name");
+                obj_hotel.addRating(".stars");
+                obj_hotel.addAddress(".hotel_address");
+                obj_hotel.addPhotos(".photos");
+                obj_hotel.addDesc(".description");
+                obj_hotel.addFacilities(".facilities");
+                obj_hotel.addRooms(".rooms_table");
+//                obj_hotel.addReviews(".reviews_list");
+                obj_hotel.addPagination(".pagination", 5, ".reviews_list");
+
+
+
                 function hotels() {
 
                     this.addName = function (name) {
@@ -41,8 +55,9 @@ $(document).ready(function () {
                         for (var i = 0; i < countPhotos; i++) {
                             var getThumb = getPhotos[i].thumbnail;
                             var getUrl = getPhotos[i].large;
+                            var getAlt = getPhotos[i].alt;
 
-                            $(photos + " ul").append('<li class="one_photo"><a href="' + getUrl + '"><img src="' + getThumb + '" alt="description of photo 1" /></a></li>');
+                            $(photos + " ul").append('<li class="one_photo"><img src="' + getThumb + '" alt="' + getAlt + '" /></li>');
                         }
                     };
 
@@ -107,22 +122,26 @@ $(document).ready(function () {
                             }
                         }
                         getPageClick(0);
-                        
-                        
+
+                        $(pagination + " li").click(function () {
+                            var getClick = $(this).index();
+                            $(review + " li").remove();
+                            getPageClick(getClick);
+                        });
                     };
-
-
-
                 }
-                var obj_hotel = new hotels();
-                obj_hotel.addName(".hotel_name");
-                obj_hotel.addRating(".stars");
-                obj_hotel.addAddress(".hotel_address");
-                obj_hotel.addPhotos(".photos");
-                obj_hotel.addDesc(".description");
-                obj_hotel.addFacilities(".facilities");
-                obj_hotel.addRooms(".rooms_table");
-//                obj_hotel.addReviews(".reviews_list");
-                obj_hotel.addPagination(".pagination", 5, ".reviews_list");
             });
+
+
+    (function () {
+        jQuery.fn.extend({
+            pj_lightbox: function (options) {
+                var defaults = {
+                };
+                var options = $.extend(true, {}, defaults, options);
+                
+            }
+        });
+    })(jQuery);
+
 });
