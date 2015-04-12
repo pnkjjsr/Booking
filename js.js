@@ -145,6 +145,8 @@ $(document).ready(function () {
                         $(pagination + " li").click(function () {
                             var getClick = $(this).index();
                             $(review + " li").remove();
+                            $(pagination + " li").removeClass('active');
+                            $(this).addClass('active');
                             getPageClick(getClick);
                         });
                     };

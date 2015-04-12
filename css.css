@@ -230,7 +230,7 @@ h2 {
     background-color: #E6EDF6;
     cursor: pointer;
 }
-.pagination li:hover {
+.pagination li:hover, .pagination li.active {
     color: #fff;
     border: 1px solid #000;
     background-color: #003580;
