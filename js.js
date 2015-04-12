@@ -34,24 +34,24 @@ $(document).ready(function () {
 
 
                 function hotels() { // define HOTEL class
-                    
+
                     //  add name property
                     this.addName = function (name) {
                         $(name).prepend(getHotelName);
                     };
-                    
+
                     // add rating property
                     this.addRating = function (rating) {
                         for (var i = 1; i <= getHotelRating; i++) {
                             $(rating).append("★");
                         }
                     };
-                    
+
                     // add address property
                     this.addAddress = function (address) {
                         $(address).append(getAddress);
                     };
-                    
+
                     // add photos thumb property
                     this.addPhotos = function (photos) {
                         var countPhotos = $(getPhotos).size();
@@ -66,17 +66,17 @@ $(document).ready(function () {
                         $(photos + " ul li").click(function () {
                             var getIndex = $(this).index();
 
-                            $(photos).pj_lightbox({ // using below define CustomMethod here.
+                            $(photos).pj_lightbox({// using below define Custom Method here.
                                 indexVal: getIndex
                             });
                         });
                     };
-                    
+
                     //  add description property
                     this.addDesc = function (desc) {
                         $(desc).append(getDesc);
                     };
-                    
+
                     //  add facilities property
                     this.addFacilities = function (facilities) {
                         var countFacilities = $(getFacilities).size();
@@ -87,7 +87,7 @@ $(document).ready(function () {
                             $(facilities + " ul").append('<li>' + getFacility + '</li>');
                         }
                     };
-                    
+
                     //  add rooms property
                     this.addRooms = function (rooms) {
                         var countRooms = $(getRooms).size();
@@ -102,7 +102,7 @@ $(document).ready(function () {
                             $(rooms + " tbody").append('<tr><td class="room_name">' + getName + '</th><td class="room_occupancy">' + getOccupancy + '</th><td class="room_price">' + getCurrency + getPrice + '</th><td class="room_quantity"><select name="room[' + getType + ']"><option value="0" selected="selected">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></th></tr>');
                         }
                     };
-                    
+
                     // add reviews property without pagination
                     this.addReviews = function (reviews) {
                         var countReviews = $(getReviews).size();
@@ -115,17 +115,17 @@ $(document).ready(function () {
                             $(reviews).append('<li class="one_review"><strong class="review_score">' + getScore + '</strong><blockquote class="review_content">' + getReview + '<cite>' + getUser + '</cite></blockquote></li>');
                         }
                     };
-                    
+
                     //  add reviews property with pagination
                     this.addPagination = function (pagination, item, review) {
                         var countReviews = $(getReviews).size();
                         var countPage = countReviews / item;
-                        
+
                         //  add pagination Html in the page
                         for (var i = 1; i <= countPage; i++) {
                             $(pagination).append('<li>' + i + '</li>');
                         }
-                        
+
                         // Pagination
                         function getPageClick(click) {
                             var start = item * (click);
@@ -140,7 +140,7 @@ $(document).ready(function () {
                             }
                         }
                         getPageClick(0);
-                        
+
                         // Getting page number.
                         $(pagination + " li").click(function () {
                             var getClick = $(this).index();
@@ -160,7 +160,7 @@ $(document).ready(function () {
                         indexVal: '',
                         lightBox: '.lightbox',
                         animationTime: 1000,
-                        intervalTime: 3000
+                        intervalTime: 5000
                     };
                     var options = $.extend(true, {}, defaults, options);
 
@@ -172,9 +172,22 @@ $(document).ready(function () {
 
                     // First gallery image by click
                     $(options.lightBox).show();
-                    $(options.lightBox + " .gallery img").remove();
-                    $(options.lightBox + " .gallery").append('<img src="' + imageUrl[getIndex].large + '" alt="" />');
-                    $(options.lightBox + " .gallery .caption p").text(imageAlt[getIndex].alt);
+
+                    function singlePhotos() {
+                        $(options.lightBox + " .gallery img").remove();
+                        $(options.lightBox + " .gallery").append('<img src="' + imageUrl[getIndex].large + '" alt="" />');
+                        $(options.lightBox + " .gallery .caption p").text(imageAlt[getIndex].alt);
+                    }
+                    singlePhotos();
+
+                    //Slider Interval
+                    function Interval() {
+                        intr = setInterval(function () {
+                            console.log("Interval: " + getIndex);
+                            autoRotate();
+                        }, options.intervalTime);
+                        return intr;
+                    }
 
                     // Autorotate Function
                     function autoRotate() {
@@ -188,13 +201,30 @@ $(document).ready(function () {
                         $(options.lightBox + " .gallery .caption p").text(imageUrl[getIndex].alt);
                     }
 
-                    //Slider Interval
-                    function Interval() {
-                        intr = setInterval(function () {
+                    // Next
+                    (function nextImage() {
+                        $(options.lightBox + " .gallery .next").click(function () {
+                            clearInterval(interval);
+                            console.log("Next: " + getIndex);
                             autoRotate();
-                        }, options.intervalTime);
-                        return intr;
-                    }
+                            interval = Interval();
+                        });
+                    })();
+
+                    // Prev
+                    (function prevImage() {
+                        $(options.lightBox + " .gallery .prev").click(function () {
+                            clearInterval(interval);
+                            getIndex = getIndex - 2;
+                            if (getIndex === -2) {
+                                getIndex = 12;
+                            }
+                            console.log("Prev: " + getIndex);
+                            autoRotate();
+                            interval = Interval();
+                        });
+                    })();
+
 
                     // Close Lightbox and Stop Interval
                     (function close() {
