@@ -185,7 +185,6 @@ $(document).ready(function () {
                     //Slider Interval
                     function Interval() {
                         intr = setInterval(function () {
-                            console.log("Interval: " + getIndex);
                             autoRotate();
                         }, options.intervalTime);
                         return intr;
@@ -207,7 +206,6 @@ $(document).ready(function () {
                     (function nextImage() {
                         $(options.lightBox + " .gallery .next").click(function () {
                             clearInterval(interval);
-                            console.log("Next: " + getIndex);
                             autoRotate();
                             interval = Interval();
                         });
@@ -221,7 +219,6 @@ $(document).ready(function () {
                             if (getIndex === -2) {
                                 getIndex = 12;
                             }
-                            console.log("Prev: " + getIndex);
                             autoRotate();
                             interval = Interval();
                         });
