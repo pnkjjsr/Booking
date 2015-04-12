@@ -90,7 +90,7 @@ h2 {
 }
 
 .one_review cite:before {
-    content: '� ';
+    content: '— ';
 }
 
 .review_score {
@@ -209,7 +209,7 @@ h2 {
 }
 
 .facilities li:before {
-    content: '? ';
+    content: '✔ ';
     color: #0896ff;
 }
 
