@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hotel Fantastique</title>
+        <link rel="stylesheet" href="css.css" />
+        <!--[if lt IE 9]>
+        <script>
+                document.createElement('header');
+                document.createElement('nav');
+                document.createElement('section');
+                document.createElement('article');
+                document.createElement('aside');
+                document.createElement('footer');
+        </script>
+        <![endif]-->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <form class="form" name="testForm" onsubmit="objectValidation.required('testForm')" method="post">
+            <div class="required">
+                <label>Name *</label>
+                <input name="fname" type="text" value="" />
+            </div>
+
+            <div>
+                <label>Surname</label>
+                <input type="text" value="" />
+            </div>
+
+            <div class="required">
+                <label>Phone *</label>
+                <input name="fphone" type="text" value="" />
+            </div>
+
+            <div class="required">
+                <label>Email *</label>
+                <input name="femail" type="text" value="" />
+            </div>
+
+            <div>
+                <label>Address</label>
+                <input type="text" value="" />
+            </div>
+
+            <div>    
+                <input type="submit" value="OK" />
+            </div>  
+        </form>
+
+        <script src="jquery-1.11.1.min.js"></script>
+        <script src="js.js"></script>        
+    </body>
+</html>

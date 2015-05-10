@@ -1,5 +1,43 @@
-// you can enter your JS here!
+// Your JavaScript ( ~10 minutes )
+//
+// * Write a JavaScript code to validate the form, with the following requirements:
+//     * IE7+
+//     * Fields with * are required
+//     * Email has to be valid. You can use the global method validateEmail(email) to validate the email (returns a boolean)
+//     * Make it as flexible as possible, so it works with different form setups
+//     * Designers may need to add new fields or change the validation with no JS
+//
+//     Also consider:
+//     * You only have ~10 minutes.
+//     * Think on a simple solution that works, rather then building a spaceship
+//
+// * You may assume that the jQuery library is already loaded
 
+
+// Technical interview test on SKYPE.
+function validation(name) {
+    this.required = function (name) {
+        var formName = document.forms[name];
+        var getValue = formName.getElementsByClassName('required').length;
+        var errorMessages = ['Please enter your name.', 'Oh, you forgot to enter your mobile number', 'Oh Come-on, e-mail id is very important please enter it.'];
+
+        for (var i = 0; i < getValue; i++) {
+            var inputValue = formName.getElementsByClassName('required')[i].getElementsByTagName('input')[0].value;
+            console.log(inputValue);
+            if (inputValue === null || inputValue === "") {
+                alert(errorMessages[i]);
+                return false;
+            }
+        }
+
+        alert("Congratulation, You application is successfully submitted.  Thankyou for your time.");
+    };
+}
+
+var objectValidation = new validation();
+
+
+// you can enter your JS here!
 $(document).ready(function () {
     $.ajax({
         method: "POST",

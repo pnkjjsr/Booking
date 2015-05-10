@@ -310,3 +310,16 @@ h2 {
 .gallery img {
     position: absolute;
 }
+
+/*Skype Interview Task*/
+.form {}
+.form div {
+    padding: 5px 0;
+}
+.form label {
+    display: inline-block;
+    width: 100px;
+}
+.form input {
+    padding: 3px;    
+}
